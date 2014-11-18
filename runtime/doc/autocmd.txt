@@ -322,6 +322,7 @@ Name			triggered by ~
 |CompleteDone|		after Insert mode completion is done
 
 |User|			to be used in combination with ":doautocmd"
+|UserCmdPost|             after an user command has executed
 
 
 The alphabetical list of autocommand events:		*autocmd-events-abc*
@@ -886,6 +887,9 @@ TextChangedI			After a change was made to the text in the
 User				Never executed automatically.  To be used for
 				autocommands that are only executed with
 				":doautocmd".
+
+UserCmdPost                     After a user defined command has executed.
+
 							*UserGettingBored*
 UserGettingBored		When the user presses the same key 42 times.
 				Just kidding! :-)

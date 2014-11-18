@@ -2001,6 +2001,10 @@ doend:
 
   --ex_nesting_level;
 
+  if (USER_CMDIDX(ea.cmdidx)) {
+      apply_autocmds(EVENT_USERCMDPOST, (char*)strtok((char*)ea.cmd, " "), NULL, false, NULL);
+  }
+
   return ea.nextcmd;
 }
 

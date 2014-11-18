@@ -75,6 +75,7 @@ typedef enum auto_event {
   EVENT_TERMCHANGED,            /* after changing 'term' */
   EVENT_TERMRESPONSE,           /* after setting "v:termresponse" */
   EVENT_USER,                   /* user defined autocommand */
+  EVENT_USERCMDPOST,            /* after user command */
   EVENT_VIMENTER,               /* after starting Vim */
   EVENT_VIMLEAVE,               /* before exiting Vim */
   EVENT_VIMLEAVEPRE,            /* before exiting Vim and writing .viminfo */

@@ -5256,6 +5256,7 @@ static struct event_name {
   {"TextChanged",     EVENT_TEXTCHANGED},
   {"TextChangedI",    EVENT_TEXTCHANGEDI},
   {"User",            EVENT_USER},
+  {"UserCmdPost",     EVENT_USERCMDPOST},
   {"VimEnter",        EVENT_VIMENTER},
   {"VimLeave",        EVENT_VIMLEAVE},
   {"VimLeavePre",     EVENT_VIMLEAVEPRE},
@@ -5272,7 +5273,7 @@ static AutoPat *first_autopat[NUM_EVENTS] =
   NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,
   NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,
   NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,
-  NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+  NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
 };
 
 static AutoPatCmd *active_apc_list = NULL; /* stack of active autocommands */
@@ -6637,7 +6638,8 @@ apply_autocmds_group (
         || event == EVENT_QUICKFIXCMDPRE
         || event == EVENT_COLORSCHEME
         || event == EVENT_QUICKFIXCMDPOST
-        || event == EVENT_JOBACTIVITY)
+        || event == EVENT_JOBACTIVITY
+        || event == EVENT_USERCMDPOST)
       fname = vim_strsave(fname);
     else
       fname = FullName_save(fname, FALSE);
