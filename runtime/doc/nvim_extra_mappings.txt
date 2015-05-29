@@ -1,0 +1,31 @@
+*nvim_extra_mappings.txt*    For Nvim.                         {Nvim}
+
+EXTRA MAPPINGS FOR NVIM                                      *nvim-extra-mappings*
+
+The `early/extra-mappings.vim` script provides a few keyboard mappings that might
+be useful, and tries to fix some issues the community has identified with Vim's
+default behavior.
+
+This script is loaded before the |vimrc|, so the mappings below can be easily
+overridden by the user.
+
+The mappings provided are:
+
+								*t_<Esc><Esc>*
+1. <Esc><Esc> leaves terminal-mode (see |nvim-terminal-emulator|), like
+   CTRL-\ CTRL-N (see |CTRL-\_CTRL-N|).
+
+								       *Y_eol*
+2. |Y| yanks to the end of line, which is more consistent with |cc| and |C|,
+   for example.
+
+							     *undoable_CTRL-u*
+3. <C-u> can be undone. (see |i_CTRL-U|)
+
+								  *smart-home*
+4. <Home> moves the cursor to the first non-blank character of the line on
+   first press (like |^|), and the first character of the line on second (like
+   |0|). It alternates afterwards.
+
+============================================================================
+ vim:tw=78:ts=8:noet:ft=help:norl:
