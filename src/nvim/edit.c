@@ -905,6 +905,13 @@ doESCkey:
       /* CTRL-X CTRL-U completes with 'completefunc'. */
       if (ctrl_x_mode == CTRL_X_FUNCTION)
         goto docomplete;
+
+      // make sure this is undoable
+      u_sync(TRUE);
+      ins_need_undo = TRUE;
+      update_Insstart_orig = false;
+      Insstart = curwin->w_cursor;
+
       did_backspace = ins_bs(c, BACKSPACE_LINE, &inserted_space);
       auto_format(FALSE, TRUE);
       inserted_space = FALSE;
