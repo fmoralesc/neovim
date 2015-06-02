@@ -2,7 +2,6 @@
 " see :help nvim-extra-mappings
 
 tnoremap <esc><esc> <C-\><c-n>
-nnoremap Y y$
 inoremap <C-u> <C-g>u<C-u>
 noremap <expr> <home> virtcol(".") - 1 <= indent(".") && col(".") > 1 ? "0" : "_"
 

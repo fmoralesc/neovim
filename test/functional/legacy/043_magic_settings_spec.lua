@@ -35,7 +35,7 @@ describe('regexp with magic settings', function()
     feed('x:$<cr>')
     execute('set undolevels=100')
     feed('dv?bar?<cr>')
-    feed('Yup:<cr>')
+    feed('yyup:<cr>')
     execute('?^1?,$yank A')
 
     -- Put @a and clean empty line

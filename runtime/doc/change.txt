@@ -912,11 +912,9 @@ inside of strings can change!  Also see 'softtabstop' option. >
 ["x]yy			Yank [count] lines [into register x] |linewise|.
 
 							*Y*
-["x]Y			yank [count] lines [into register x] (synonym for
-			yy, |linewise|).
-			{Nvim} By default, Y is mapped to yank text from the
-			cursor to the end of line, which is more consistent
-			with respect to, for example, |cc| and |C|.
+["x]Y			Yank text from the cursor to the end of line
+			[into register x].
+			{Nvim} In Vim, Y is synonym to yy.
 
 							*v_y*
 {Visual}["x]y		Yank the highlighted text [into register x] (for

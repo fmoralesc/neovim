@@ -15,15 +15,11 @@ The mappings provided are:
 1. <Esc><Esc> leaves terminal-mode (see |nvim-terminal-emulator|), like
    CTRL-\ CTRL-N (see |CTRL-\_CTRL-N|).
 
-								       *Y_eol*
-2. |Y| yanks to the end of line, which is more consistent with |cc| and |C|,
-   for example.
-
 							     *undoable_CTRL-u*
-3. <C-u> can be undone. (see |i_CTRL-U|)
+2. <C-u> can be undone. (see |i_CTRL-U|)
 
 								  *smart-home*
-4. <Home> moves the cursor to the first non-blank character of the line on
+3. <Home> moves the cursor to the first non-blank character of the line on
    first press (like |^|), and the first character of the line on second (like
    |0|). It alternates afterwards.
 

@@ -15,7 +15,7 @@ describe('writing and reading a file of over 100 Kbyte', function()
       This is the trailer
       This is the end]])
 
-    feed('kY3000p2GY3000p')
+    feed('kyy3000p2Gyy3000p')
 
     execute('w! test.out')
     execute('%d')

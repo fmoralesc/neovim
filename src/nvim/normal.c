@@ -5736,7 +5736,7 @@ static void nv_optrans(cmdarg_T *cap)
   static char_u *(ar[8]) = {(char_u *)"dl", (char_u *)"dh",
                             (char_u *)"d$", (char_u *)"c$",
                             (char_u *)"cl", (char_u *)"cc",
-                            (char_u *)"yy", (char_u *)":s\r"};
+                            (char_u *)"y$", (char_u *)":s\r"};
   static char_u *str = (char_u *)"xXDCsSY&";
 
   if (!checkclearopq(cap->oap)) {
