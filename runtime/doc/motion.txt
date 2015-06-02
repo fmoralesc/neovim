@@ -177,14 +177,9 @@ l		or					*l*
 			motion.
 
 							*<Home>* *<kHome>*
-<Home>			To the first character of the line.  |exclusive|
-			motion.  When moving up or down next, stay in same
-			TEXT column (if possible).  Most other commands stay
-			in the same SCREEN column.  <Home> works like "1|",
-			which differs from "0" when the line starts with a
-			<Tab>.
-                        {Nvim} By default, <Home> is mapped so it alternates
-			between behaving like |^| and |0| (see |smart-home|).
+<Home>			Toggles between the first character of the line (like
+			"1|", see |bar|), and the first non-blank character of
+			the line (like |^|). |exclusive| motion. {Nvim}
 
 							*^*
 ^			To the first non-blank character of the line.

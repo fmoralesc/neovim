@@ -6697,7 +6697,11 @@ static void nv_home(cmdarg_T *cap)
     nv_goto(cap);
   else {
     cap->count0 = 1;
-    nv_pipe(cap);
+    if (curwin->w_virtcol - 1 <= get_indent() && curwin->w_cursor.col > 1) {
+	nv_pipe(cap);
+    } else {
+	nv_lineop(cap);
+    }
   }
   ins_at_eol = false;       /* Don't move cursor past eol (only necessary in a
                                one-character line). */

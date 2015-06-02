@@ -18,10 +18,5 @@ The mappings provided are:
 							     *undoable_CTRL-u*
 2. <C-u> can be undone. (see |i_CTRL-U|)
 
-								  *smart-home*
-3. <Home> moves the cursor to the first non-blank character of the line on
-   first press (like |^|), and the first character of the line on second (like
-   |0|). It alternates afterwards.
-
 ============================================================================
  vim:tw=78:ts=8:noet:ft=help:norl:
