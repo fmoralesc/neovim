@@ -20,7 +20,7 @@ zc:call append("$", getline(foldclosed(".")))
 :call append("$", "marker " . foldlevel("."))
 [z:call append("$", foldlevel("."))
 jo{{ r{jj:call append("$", foldlevel("."))
-kYpj:call append("$", foldlevel("."))
+kyypj:call append("$", foldlevel("."))
 :" test folding with indent
 :set fdm=indent sw=2
 /^2 b

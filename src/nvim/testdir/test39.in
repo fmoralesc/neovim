@@ -48,13 +48,13 @@ G$khhhhhkkcmno
 :set ve= enc=latin1
 :.,/^$/w >> test.out
 :" gUe must uppercase a whole word, also when ﬂ changes to SS
-Gothe youtuﬂeuu endYpk0wgUe
+Gothe youtuﬂeuu endyypk0wgUe
 :" gUfx must uppercase until x, inclusive.
 O- youﬂtuﬂexu -0fogUfx
 :" VU must uppercase a whole line
-YpkVU
+yypkVU
 :" same, when it's the last line in the buffer
-YPGi111VUddP
+yyPGi111VUddP
 :" Uppercase two lines
 Oblah di
 doh dutVkUj
