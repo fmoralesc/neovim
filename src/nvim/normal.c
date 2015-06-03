@@ -5690,7 +5690,7 @@ static void v_visop(cmdarg_T *cap)
     if (VIsual_mode != Ctrl_V) {
       VIsual_mode_orig = VIsual_mode;
       VIsual_mode = 'V';
-    } else if (cap->cmdchar == 'C' || cap->cmdchar == 'D')
+    } else if (cap->cmdchar == 'C' || cap->cmdchar == 'D' || cap->cmdchar == 'Y')
       curwin->w_curswant = MAXCOL;
   }
   cap->cmdchar = *(vim_strchr(trans, cap->cmdchar) + 1);
