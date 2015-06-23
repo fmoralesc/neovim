@@ -401,7 +401,6 @@ void terminal_enter(bool process_deferred)
           break;
 	} else if (c == Ctrl_X && !got_cx) {
 	  got_cx = true;
-	  break;
         }
         if (term->closed) {
           close = true;
