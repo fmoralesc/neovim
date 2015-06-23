@@ -350,6 +350,7 @@ void terminal_enter(bool process_deferred)
   bool close = false;
 
   bool got_bs = false;  // True if the last input was <C-\>
+  bool got_cx = false;  // True if the last input was <C-x>
 
   while (term->buf == curbuf) {
     if (process_deferred) {
@@ -387,12 +388,20 @@ void terminal_enter(bool process_deferred)
         if (got_bs) {
           goto end;
         }
+
+      case Ctrl_C:
+	if (got_cx) {
+	  goto end;
+	}
         // FALLTHROUGH
 
       default:
         if (c == Ctrl_BSL && !got_bs) {
           got_bs = true;
           break;
+	} else if (c == Ctrl_X && !got_cx) {
+	  got_cx = true;
+	  break;
         }
         if (term->closed) {
           close = true;
@@ -400,6 +409,7 @@ void terminal_enter(bool process_deferred)
         }
 
         got_bs = false;
+	got_cx = false;
         terminal_send_key(term, c);
     }
   }
