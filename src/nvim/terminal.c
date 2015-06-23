@@ -396,6 +396,9 @@ void terminal_enter(bool process_deferred)
         // FALLTHROUGH
 
       default:
+	got_bs = false;
+	got_cx = false;
+
         if (c == Ctrl_BSL && !got_bs) {
           got_bs = true;
           break;
@@ -407,8 +410,6 @@ void terminal_enter(bool process_deferred)
           goto end;
         }
 
-        got_bs = false;
-	got_cx = false;
         terminal_send_key(term, c);
     }
   }
