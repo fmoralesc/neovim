@@ -324,7 +324,7 @@ function! tutor#TutorCmd(tutor_name)
         let l:tutor_to_open = inputlist(l:candidates)
         let l:to_open = l:tutors[l:tutor_to_open-1]
     endif
-    
+
     if has('gui') || has('nvim')
         exe "drop ".l:to_open
     else
@@ -337,4 +337,3 @@ function! tutor#TutorCmdComplete(lead,line,pos)
     let l:names = uniq(sort(map(l:tutors, 'fnamemodify(v:val, ":t:r")')))
     return join(l:names, "\n")
 endfunction
-
