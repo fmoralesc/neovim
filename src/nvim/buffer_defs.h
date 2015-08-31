@@ -484,6 +484,8 @@ struct file_buffer {
   char_u      *b_sfname;        /* short file name */
   char_u      *b_fname;         /* current file name */
 
+  char_u      *b_alias;         /* buffer alias */
+
   bool file_id_valid;
   FileID file_id;
 

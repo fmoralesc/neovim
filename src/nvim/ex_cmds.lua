@@ -62,6 +62,12 @@ return {
     func='ex_wrongmodifier',
   },
   {
+    command='alias',
+    flags=bit.bor(NEEDARG, EXTRA),
+    addr_type=ADDR_LINES,
+    func='buffer_alias',
+  },
+  {
     command='all',
     flags=bit.bor(BANG, RANGE, NOTADR, COUNT, TRLBAR),
     addr_type=ADDR_LINES,

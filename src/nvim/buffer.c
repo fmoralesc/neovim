@@ -1456,6 +1456,7 @@ buflist_new (
   hash_init(&buf->b_s.b_keywtab_ic);
 
   buf->b_fname = buf->b_sfname;
+  buf->b_alias = NULL;
   if (!file_id_valid) {
     buf->file_id_valid = false;
   } else {
@@ -2149,7 +2150,7 @@ void buflist_list(exarg_T *eap)
     else
       home_replace(buf, buf->b_fname, NameBuff, MAXPATHL, TRUE);
 
-    len = vim_snprintf((char *)IObuff, IOSIZE - 20, "%3d%c%c%c%c%c \"%s\"",
+    len = vim_snprintf((char *)IObuff, IOSIZE - 20, "%3d%c%c%c%c%c \"%s\"  %s",
         buf->b_fnum,
         buf->b_p_bl ? ' ' : 'u',
         buf == curbuf ? '%' :
@@ -2159,7 +2160,8 @@ void buflist_list(exarg_T *eap)
         !MODIFIABLE(buf) ? '-' : (buf->b_p_ro ? '=' : ' '),
         (buf->b_flags & BF_READERR) ? 'x'
         : (bufIsChanged(buf) ? '+' : ' '),
-        NameBuff);
+        NameBuff,
+        buf->b_alias == NULL ? (char *)"" : (char *)buf->b_alias);
 
     /* put "line 999" in column 40 or after the file name */
     i = 40 - vim_strsize(IObuff);
@@ -2263,6 +2265,11 @@ setfname (
 
   buf_name_changed(buf);
   return OK;
+}
+
+void buffer_alias(exarg_T *eap)
+{
+  curbuf->b_alias = vim_strsave(eap->arg);
 }
 
 /*
